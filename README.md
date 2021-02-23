@@ -4,7 +4,7 @@ Projeto de LP2 - 2021.2
 ## Informações
 
 Desenvolvido por Carlos Mauricio Lopes
-Matrpicula 2010204313 11
+Matricula 2010204313 11
 
 ### Desenvolvimento
 
