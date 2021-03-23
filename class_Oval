@@ -1,0 +1,4 @@
+ class Oval {
+	int x,y;
+	int w,h;
+} 
