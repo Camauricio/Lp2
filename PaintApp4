@@ -1,0 +1,118 @@
+import java.awt.*;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+class PaintApp4 {
+    public static void main (String[] args) {
+        PaintFrame frame = new PaintFrame();
+        frame.setVisible(true);
+    }
+}
+
+class PaintFrame extends JFrame {
+    Rect1 r1;
+    Rect2 r2;
+    Rect3 r3;
+    Rect4 r4;
+
+    PaintFrame () {
+        this.addWindowListener (
+            new WindowAdapter() {
+                public void windowClosing (WindowEvent e) {
+                    System.exit(0);
+                }
+            }
+        );
+        this.setTitle("Painting Figures");
+        this.setSize(350, 350);
+        this.r1 = new Rect1(50,50, 30,250);
+        this.r2 = new Rect2(280,15,50,50);
+        this.r3 = new Rect3(150,150,10,90);
+        this.r4 = new Rect4(190,180,120,40);
+    }
+
+    public void paint (Graphics g) {
+        super.paint(g);
+        this.r1.paint(g);
+	this.r2.paint(g);
+	this.r3.paint(g);
+	this.r4.paint(g);
+    }
+}
+
+class Rect1 {
+    int x, y;
+    int w, h;
+
+    Rect1 (int x, int y, int w, int h) {
+        this.x = x;
+        this.y = y;
+        this.w = w;
+        this.h = h;
+    }
+        void paint (Graphics g) {
+        Graphics2D g2d = (Graphics2D) g;
+	g2d.setPaint(Color.green);
+	g2d.fillRect(this.x,this.y, this.w,this.h);
+	g2d.setPaint(Color.black);
+        g2d.drawRect(this.x,this.y, this.w,this.h);
+    }
+}
+class Rect2 {
+    int x, y;
+    int w, h;
+
+    Rect2 (int x, int y, int w, int h) {
+        this.x = x;
+        this.y = y;
+        this.w = w;
+        this.h = h;
+    }
+
+        void paint (Graphics g) {
+        Graphics2D g2d = (Graphics2D) g;
+	g2d.setPaint(Color.blue);
+	g2d.fillRect(this.x,this.y, this.w,this.h);
+	g2d.setPaint(Color.yellow);
+        g2d.drawRect(this.x,this.y, this.w,this.h);
+    }
+}
+class Rect3 {
+    int x, y;
+    int w, h;
+
+    Rect3 (int x, int y, int w, int h) {
+        this.x = x;
+        this.y = y;
+        this.w = w;
+        this.h = h;
+    }
+
+        void paint (Graphics g) {
+        Graphics2D g2d = (Graphics2D) g;
+	g2d.setPaint(Color.yellow);
+	g2d.fillRect(this.x,this.y, this.w,this.h);
+	g2d.setPaint(Color.red);
+        g2d.drawRect(this.x,this.y, this.w,this.h);
+    }
+}
+class Rect4 {
+    int x, y;
+    int w, h;
+
+    Rect4 (int x, int y, int w, int h) {
+        this.x = x;
+        this.y = y;
+        this.w = w;
+        this.h = h;
+    }
+
+        void paint (Graphics g) {
+        Graphics2D g2d = (Graphics2D) g;
+	g2d.setPaint(Color.red);
+	g2d.fillRect(this.x,this.y, this.w,this.h);
+	g2d.setPaint(Color.green);
+        g2d.drawRect(this.x,this.y, this.w,this.h);
+    }
+}
