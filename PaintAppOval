@@ -1,0 +1,118 @@
+import java.awt.*;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+class PaintAppOval {
+    public static void main (String[] args) {
+        PaintFrame frame = new PaintFrame();
+        frame.setVisible(true);
+    }
+}
+
+class PaintFrame extends JFrame {
+    Oval1 r1;
+    Oval2 r2;
+    Oval3 r3;
+    Oval4 r4;
+
+    PaintFrame () {
+        this.addWindowListener (
+            new WindowAdapter() {
+                public void windowClosing (WindowEvent e) {
+                    System.exit(0);
+                }
+            }
+        );
+        this.setTitle("Painting Figures");
+        this.setSize(350, 350);
+        this.r1 = new Oval1(50,80, 70,250);
+        this.r2 = new Oval2(280,30,80,50);
+        this.r3 = new Oval3(150,180,45,70);
+        this.r4 = new Oval4(190,120,120,30);
+    }
+
+    public void paint (Graphics g) {
+        super.paint(g);
+        this.r1.paint(g);
+	      this.r2.paint(g);
+	      this.r3.paint(g);
+	      this.r4.paint(g);
+    }
+}
+
+class Oval1 {
+    int x, y;
+    int w, h;
+
+    Oval1 (int x, int y, int w, int h) {
+        this.x = x;
+        this.y = y;
+        this.w = w;
+        this.h = h;
+    }
+        void paint (Graphics g) {
+        Graphics2D g2d = (Graphics2D) g;
+	      g2d.setPaint(Color.green);
+	      g2d.fillOval(this.x,this.y, this.w,this.h);
+	      g2d.setPaint(Color.black);
+        g2d.drawOval(this.x,this.y, this.w,this.h);
+    }
+}
+class Oval2 {
+    int x, y;
+    int w, h;
+
+    Oval2 (int x, int y, int w, int h) {
+        this.x = x;
+        this.y = y;
+        this.w = w;
+        this.h = h;
+    }
+
+        void paint (Graphics g) {
+        Graphics2D g2d = (Graphics2D) g;
+	      g2d.setPaint(Color.blue);
+	      g2d.fillOval(this.x,this.y, this.w,this.h);
+	      g2d.setPaint(Color.yellow);
+        g2d.drawOval(this.x,this.y, this.w,this.h);
+    }
+}
+class Oval3 {
+    int x, y;
+    int w, h;
+
+    Oval3 (int x, int y, int w, int h) {
+        this.x = x;
+        this.y = y;
+        this.w = w;
+        this.h = h;
+    }
+
+        void paint (Graphics g) {
+        Graphics2D g2d = (Graphics2D) g;
+	      g2d.setPaint(Color.yellow);
+	      g2d.fillOval(this.x,this.y, this.w,this.h);
+	      g2d.setPaint(Color.red);
+        g2d.drawOval(this.x,this.y, this.w,this.h);
+    }
+}
+class Oval4 {
+    int x, y;
+    int w, h;
+
+    Oval4 (int x, int y, int w, int h) {
+        this.x = x;
+        this.y = y;
+        this.w = w;
+        this.h = h;
+    }
+
+        void paint (Graphics g) {
+        Graphics2D g2d = (Graphics2D) g;
+	      g2d.setPaint(Color.red);
+	      g2d.fillOval(this.x,this.y, this.w,this.h);
+	      g2d.setPaint(Color.green);
+        g2d.drawOval(this.x,this.y, this.w,this.h);
+    }
+}
